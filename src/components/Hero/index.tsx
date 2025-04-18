@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Link } from "../Link";
+import { Icon } from "../Icon";
 
 export interface HeroProps {
   title?: string;
@@ -17,21 +17,19 @@ export default function Hero({
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10">
-        <Image
-          src="/globe.svg"
-          alt=""
-          width={500}
-          height={500}
-          aria-hidden="true"
+        <Icon
+          name="plantOutline"
+          size="xl"
+          color="primary"
+          className="w-[500px] h-[500px]"
         />
       </div>
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 opacity-10">
-        <Image
-          src="/file.svg"
-          alt=""
-          width={400}
-          height={400}
-          aria-hidden="true"
+        <Icon
+          name="leafOutline"
+          size="xl"
+          color="primary"
+          className="w-[400px] h-[400px]"
         />
       </div>
 
@@ -62,13 +60,7 @@ export default function Hero({
                 </div>
               </div>
               <div className="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg">
-                <Image
-                  src="/window.svg"
-                  alt=""
-                  width={40}
-                  height={40}
-                  aria-hidden="true"
-                />
+                <Icon name="seedling" size="lg" color="primary" />
               </div>
             </div>
           </div>

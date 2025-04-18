@@ -88,4 +88,111 @@ When helping with this project:
 - Maintain consistency by using the same variant names across similar components
 - Document component variants in the component file
 
+## Reusable Components
+
+### Icon Component
+
+The project includes a reusable Icon component located at `/src/components/Icon/index.tsx`. This component:
+
+- Centralizes all icons in one place using react-icons packages
+- Uses tailwind-variants for consistent styling
+- Provides size and color variants for all icons
+- Ensures accessibility with proper aria attributes
+
+Usage example:
+
+```tsx
+import { Icon } from "@/components/Icon";
+
+export function MyComponent() {
+  return (
+    <div>
+      <Icon name="leaf" size="md" color="primary" />
+      <span>Organic Herbs</span>
+    </div>
+  );
+}
+```
+
+#### Available Icons
+
+The Icon component has a predefined set of icons organized by categories:
+
+- Nature & Plants: leaf, seedling, plant, plantOutline, etc.
+- E-commerce: basket, shipping, medicines
+- UI Elements: search, check, close, arrowRight
+- Contact & Location: location, phone, email
+
+#### Adding New Icons
+
+To add a new icon to the Icon component:
+
+1. Import the icon from an appropriate react-icons package at the top of the file:
+
+   ```tsx
+   import { NewIconName } from "react-icons/xx"; // where xx is the icon package prefix
+   ```
+
+2. Add the icon to the `icons` object with a descriptive name:
+
+   ```tsx
+   export const icons = {
+     // ...existing icons...
+     newIconName: NewIconName, // Add your new icon here
+   };
+   ```
+
+3. The icon will automatically receive the styling variants defined in the component
+
+This approach ensures consistency across the application and makes icon management more maintainable.
+
+### Link Component
+
+The project includes a reusable Link component located at `/src/components/Link/index.tsx`. This component:
+
+- Wraps Next.js's Link component for consistent styling and behavior
+- Uses tailwind-variants for conditional styling
+- Provides variant and size options for different use cases
+- Maintains proper accessibility attributes from Next.js Link
+
+Usage example:
+
+```tsx
+import { Link } from "@/components/Link";
+
+export function MyComponent() {
+  return (
+    <div>
+      <Link href="/herbs" variant="primary" size="md">
+        View Our Herbs
+      </Link>
+    </div>
+  );
+}
+```
+
+#### Available Link Variants
+
+The Link component supports the following variants:
+
+- **Variants**:
+
+  - `primary`: Green background with white text (default)
+  - `secondary`: Transparent background with green border and text
+
+- **Sizes**:
+  - `sm`: Small link (smaller padding and font size)
+  - `md`: Medium link (default)
+  - `lg`: Large link (larger padding and font size)
+
+#### Link Props
+
+| Prop      | Type                     | Default   | Description                     |
+| --------- | ------------------------ | --------- | ------------------------------- |
+| href      | string                   | required  | The destination URL             |
+| variant   | 'primary' \| 'secondary' | 'primary' | The visual style of the link    |
+| size      | 'sm' \| 'md' \| 'lg'     | 'md'      | The size of the link            |
+| className | string                   | undefined | Optional additional CSS classes |
+| children  | React.ReactNode          | required  | The content of the link         |
+
 This document will be updated as the project evolves.
