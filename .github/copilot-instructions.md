@@ -460,6 +460,70 @@ export function ProductGrid() {
 | size        | 'default' \| 'large' | 'default' | Size variant for the card       |
 | className   | string               | undefined | Optional additional CSS classes |
 
+### Color Palette
+
+The project uses a carefully selected color palette from Tailwind CSS to maintain visual consistency across the application. The primary colors are from Tailwind's emerald, slate, and stone families, providing a natural and organic feel that aligns with the herbalist theme.
+
+#### Primary Color Families
+
+- **Emerald**: Used for primary elements, CTAs, and decorative accents
+- **Slate**: Used for text and secondary UI elements
+- **Stone**: Used for subtle backgrounds and neutral areas
+
+#### Tailwind Color Usage
+
+The project uses the following Tailwind color classes:
+
+```
+emerald-50   # Very light green, used for subtle backgrounds
+emerald-100  # Light green, used for borders and subtle accents
+emerald-200  # Slightly darker light green, used for hover states
+emerald-500  # Medium green, used for focus rings
+emerald-600  # Medium-dark green, used for primary buttons
+emerald-700  # Dark green, used for text on light backgrounds and secondary buttons
+emerald-800  # Darker green, used for hover states and secondary backgrounds
+emerald-900  # Very dark green, used for headings with primary color
+
+slate-400    # Light gray with blue undertone, used for disabled text
+slate-600    # Medium gray with blue undertone, used for secondary text
+slate-700    # Dark gray with blue undertone, used for important secondary text
+slate-900    # Very dark gray with blue undertone, used for primary text
+
+gray-200     # Light gray, used for subtle backgrounds
+gray-800     # Dark gray, used for text contrast on light backgrounds
+
+stone-50     # Very light warm gray, used for natural backgrounds
+```
+
+#### Semantic Color Usage
+
+| Element Type      | Color                                                 |
+| ----------------- | ----------------------------------------------------- |
+| Primary Text      | slate-900                                             |
+| Secondary Text    | slate-700, slate-600                                  |
+| Headings          | emerald-900 (primary), slate-900 (default)            |
+| Primary Buttons   | emerald-700 (background), white (text)                |
+| Secondary Buttons | transparent with emerald-700 border                   |
+| Backgrounds       | white, emerald-50, stone-50                           |
+| Section Borders   | emerald-100                                           |
+| Gradients         | emerald-50 to emerald-100                             |
+| Hover States      | emerald-50 (for secondary), emerald-800 (for primary) |
+| Focus Rings       | emerald-500                                           |
+
+#### Dark Mode Considerations
+
+The project is currently designed for light mode, but Tailwind's color system will facilitate adding dark mode support in the future using the `dark:` variant prefix.
+
+#### Usage Guidelines
+
+1. Use emerald colors for primary interactive elements and brand emphasis
+2. Use slate colors for text content with appropriate contrast ratios for accessibility
+3. Use stone and lighter emerald shades for secondary backgrounds and subtle emphasis
+4. Maintain consistent color application across similar UI elements
+5. Use Tailwind color classes directly rather than creating custom CSS variables
+6. Follow the semantic color roles defined in component variants
+7. Use the appropriate color intensity for the intended purpose (e.g., emerald-700 for text on light backgrounds)
+
 ### Section Component
 
 The project includes a Section component located at `/src/components/Section/index.tsx`. This component:
