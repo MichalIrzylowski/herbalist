@@ -19,6 +19,10 @@ This is a Next.js project called "herbalist-v1" that is currently a static websi
   - `layout.tsx`: The main layout component
   - `page.tsx`: The main page component
   - `globals.css`: Global CSS styles including Tailwind imports
+- `/src/components`: Contains reusable UI components
+  - `Hero/`: Hero section component
+  - `Icon/`: Reusable icon component with standardized styling
+  - `Link/`: Custom link component with consistent styling and behavior
 
 ## Coding Standards
 
@@ -89,6 +93,45 @@ When helping with this project:
 - Document component variants in the component file
 
 ## Reusable Components
+
+### Hero Component
+
+The project includes a Hero component located at `/src/components/Hero/index.tsx`. This component:
+
+- Creates a visually appealing banner section for the top of pages
+- Includes customizable title, subtitle, and call-to-action elements
+- Features decorative icons and a gradient background
+- Uses responsive design with Tailwind CSS for all screen sizes
+- Integrates with the Link and Icon components
+
+Usage example:
+
+```tsx
+import Hero from "@/components/Hero";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero
+        title="Custom Title Here"
+        subtitle="Your custom subtitle text goes here"
+        ctaText="Shop Now"
+        ctaLink="/shop"
+      />
+      {/* Other page content */}
+    </main>
+  );
+}
+```
+
+#### Hero Props
+
+| Prop     | Type   | Default                                                            | Description                        |
+| -------- | ------ | ------------------------------------------------------------------ | ---------------------------------- |
+| title    | string | "Nature's Remedies, Delivered to Your Door"                        | Main heading text                  |
+| subtitle | string | "Premium quality herbs sourced directly from sustainable farms..." | Supporting text below the title    |
+| ctaText  | string | "Explore Our Collection"                                           | Primary call-to-action button text |
+| ctaLink  | string | "/collection"                                                      | URL for the primary CTA button     |
 
 ### Icon Component
 
@@ -194,5 +237,86 @@ The Link component supports the following variants:
 | size      | 'sm' \| 'md' \| 'lg'     | 'md'      | The size of the link            |
 | className | string                   | undefined | Optional additional CSS classes |
 | children  | React.ReactNode          | required  | The content of the link         |
+
+### Heading Component
+
+The project includes a reusable Heading component located at `/src/components/Heading/index.tsx`. This component:
+
+- Provides consistent heading styles across the application
+- Allows flexible heading levels (h1-h6) that map to the appropriate HTML tags
+- Uses tailwind-variants for conditional styling
+- Supports different sizes, colors, font weights, and margin spacing
+- Ensures semantic HTML structure while allowing visual flexibility
+
+Usage example:
+
+```tsx
+import { Heading } from "@/components/Heading";
+
+export function MyComponent() {
+  return (
+    <div>
+      <Heading level={1} color="primary" marginBottom="large">
+        Main Heading
+      </Heading>
+      <Heading
+        level={2}
+        size="h3"
+        color="secondary"
+        weight="medium"
+        marginBottom="small"
+      >
+        Subheading with Custom Size
+      </Heading>
+    </div>
+  );
+}
+```
+
+#### Available Heading Variants
+
+The Heading component supports the following variants:
+
+- **Size**:
+
+  - `h1`: Extra large text (default for level 1)
+  - `h2`: Very large text (default for level 2)
+  - `h3`: Large text (default for level 3)
+  - `h4`: Medium-large text (default for level 4)
+  - `h5`: Medium text (default for level 5)
+  - `h6`: Regular text (default for level 6)
+
+- **Color**:
+
+  - `default`: Dark slate (default)
+  - `primary`: Emerald/green
+  - `secondary`: Medium slate
+  - `light`: White
+
+- **Weight**:
+
+  - `normal`: Regular font weight
+  - `medium`: Medium font weight
+  - `semibold`: Semi-bold font weight
+  - `bold`: Bold font weight (default)
+
+- **Margin Bottom**:
+  - `none`: No bottom margin
+  - `small`: Small bottom margin (0.5rem)
+  - `medium`: Medium bottom margin (1rem) (default)
+  - `large`: Large bottom margin (1.5rem)
+  - `xlarge`: Extra large bottom margin (2rem)
+
+#### Heading Props
+
+| Prop         | Type                                                 | Default                | Description                             |
+| ------------ | ---------------------------------------------------- | ---------------------- | --------------------------------------- |
+| level        | 1 \| 2 \| 3 \| 4 \| 5 \| 6                           | required               | The semantic HTML heading level         |
+| size         | 'h1' \| 'h2' \| 'h3' \| 'h4' \| 'h5' \| 'h6'         | Matches the level prop | The visual size (can differ from level) |
+| color        | 'default' \| 'primary' \| 'secondary' \| 'light'     | 'default'              | The text color                          |
+| weight       | 'normal' \| 'medium' \| 'semibold' \| 'bold'         | 'bold'                 | The font weight                         |
+| marginBottom | 'none' \| 'small' \| 'medium' \| 'large' \| 'xlarge' | 'medium'               | The bottom margin spacing               |
+| className    | string                                               | undefined              | Optional additional CSS classes         |
+| children     | React.ReactNode                                      | required               | The content of the heading              |
 
 This document will be updated as the project evolves.

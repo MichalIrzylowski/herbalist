@@ -1,18 +1,21 @@
 import { Link } from "../Link";
 import { Icon } from "../Icon";
+import { Heading } from "../Heading";
 
 export interface HeroProps {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
+  aboutUsLink?: string;
 }
 
 export default function Hero({
-  title = "Nature's Remedies, Delivered to Your Door",
-  subtitle = "Premium quality herbs sourced directly from sustainable farms. Experience the power of natural wellness.",
-  ctaText = "Explore Our Collection",
-  ctaLink = "/collection",
+  title = "Naturalne lekarstwa, dostarczane prosto do Twoich drzwi",
+  subtitle = "Najwyższej jakości zioła pozyskiwane bezpośrednio z zrównoważonych farm. Doświadcz mocy naturalnego zdrowia.",
+  ctaText = "Odkryj Naszą Kolekcję",
+  ctaLink = "/colection",
+  aboutUsLink = "/about-us",
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
@@ -36,18 +39,18 @@ export default function Hero({
       <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-900 mb-6">
+            <Heading level={1} color="primary" marginBottom="large">
               {title}
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-700 mb-8">
+            </Heading>
+            <Heading level={2} size="h5" color="secondary" marginBottom="large">
               {subtitle}
-            </p>
+            </Heading>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href={ctaLink} variant="primary">
                 {ctaText}
               </Link>
-              <Link href="/about" variant="secondary">
-                Learn More
+              <Link href={aboutUsLink} variant="secondary">
+                Dowiedz się więcej
               </Link>
             </div>
           </div>
