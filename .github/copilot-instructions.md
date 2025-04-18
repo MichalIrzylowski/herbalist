@@ -319,4 +319,261 @@ The Heading component supports the following variants:
 | className    | string                                               | undefined              | Optional additional CSS classes         |
 | children     | React.ReactNode                                      | required               | The content of the heading              |
 
+### CompactHero Component
+
+The project includes a CompactHero component located at `/src/components/CompactHero/index.tsx`. This component:
+
+- Creates a more compact version of the Hero component for secondary pages
+- Includes customizable title, subtitle, and optional call-to-action elements
+- Features a clean design with subtle decorative elements
+- Uses responsive design that adapts to different screen sizes
+- Integrates with the Link, Icon, and Heading components
+
+Usage example:
+
+```tsx
+import CompactHero from "@/components/CompactHero";
+
+export default function ProductsPage() {
+  return (
+    <main>
+      <CompactHero
+        title="Our Products"
+        subtitle="Browse our selection of premium herbs"
+        ctaText="Filter"
+        ctaLink="#filters"
+      />
+      {/* Other page content */}
+    </main>
+  );
+}
+```
+
+#### CompactHero Props
+
+| Prop     | Type   | Default                             | Description                         |
+| -------- | ------ | ----------------------------------- | ----------------------------------- |
+| title    | string | "Page Title"                        | Main heading text                   |
+| subtitle | string | "Short description of this section" | Supporting text below the title     |
+| ctaText  | string | undefined                           | Optional call-to-action button text |
+| ctaLink  | string | undefined                           | Optional URL for the CTA button     |
+
+### Feature Component
+
+The project includes a Feature component located at `/src/components/Feature/index.tsx`. This component:
+
+- Creates a feature highlight with an icon, title, and description
+- Supports different layouts and padding options
+- Uses tailwind-variants for conditional styling
+- Integrates with the Icon and Heading components
+
+Usage example:
+
+```tsx
+import { Feature } from "@/components/Feature";
+
+export function FeaturesSection() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Feature
+        iconName="leaf"
+        title="Organic"
+        description="All our herbs are certified organic and sustainably sourced."
+        layout="verticalCentered"
+        padding="medium"
+      />
+      <Feature
+        iconName="seedling"
+        title="Fresh"
+        description="We ensure maximum freshness with careful harvesting and packaging."
+        layout="verticalCentered"
+        padding="medium"
+      />
+      <Feature
+        iconName="shipping"
+        title="Fast Delivery"
+        description="Quick and reliable delivery to your doorstep."
+        layout="verticalCentered"
+        padding="medium"
+      />
+    </div>
+  );
+}
+```
+
+#### Feature Props
+
+| Prop        | Type                                     | Default    | Description                        |
+| ----------- | ---------------------------------------- | ---------- | ---------------------------------- |
+| title       | string                                   | required   | Feature title                      |
+| description | string                                   | required   | Feature description                |
+| iconName    | IconName                                 | undefined  | Optional icon to display           |
+| layout      | 'vertical' \| 'verticalCentered'         | 'vertical' | Layout style for the feature       |
+| padding     | 'none' \| 'small' \| 'medium' \| 'large' | 'none'     | Padding around the feature content |
+
+### ProductCard Component
+
+The project includes a ProductCard component located at `/src/components/ProductCard/index.tsx`. This component:
+
+- Displays product information in a card format
+- Features an icon, product name, description, weight, and tag
+- Uses tailwind-variants for conditional styling
+- Includes hover effects for better user interaction
+
+Usage example:
+
+```tsx
+import { ProductCard } from "@/components/ProductCard";
+
+export function ProductGrid() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <ProductCard
+        name="Chamomile"
+        description="A gentle herb known for its calming effects."
+        weight="50g"
+        tag="Relaxing"
+        iconName="flower"
+      />
+      <ProductCard
+        name="Peppermint"
+        description="Refreshing herb with cooling properties."
+        weight="30g"
+        tag="Digestive"
+        iconName="leaf"
+        size="large"
+      />
+    </div>
+  );
+}
+```
+
+#### ProductCard Props
+
+| Prop        | Type                 | Default   | Description                     |
+| ----------- | -------------------- | --------- | ------------------------------- |
+| name        | string               | required  | Product name                    |
+| description | string               | required  | Product description             |
+| weight      | string               | required  | Product weight/quantity         |
+| tag         | string               | required  | Product category/tag            |
+| iconName    | IconName             | required  | Icon to represent the product   |
+| size        | 'default' \| 'large' | 'default' | Size variant for the card       |
+| className   | string               | undefined | Optional additional CSS classes |
+
+### Section Component
+
+The project includes a Section component located at `/src/components/Section/index.tsx`. This component:
+
+- Provides a consistent and flexible container for page sections
+- Supports multiple background colors, spacing options, and border styles
+- Uses tailwind-variants for conditional styling
+- Can render as different HTML elements through the `as` prop
+- Handles container width and responsive padding automatically
+
+Usage example:
+
+```tsx
+import { Section } from "@/components/Section";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Section background="light" spacing="large" border="bottom">
+        <h2 className="text-2xl font-bold">Welcome to Our Store</h2>
+        <p>Discover our amazing collection of herbs.</p>
+      </Section>
+
+      <Section
+        background="gradient"
+        spacing="medium"
+        containerSize="md"
+        as="aside"
+      >
+        <h3 className="text-xl font-bold">Featured Products</h3>
+        {/* Product listings */}
+      </Section>
+    </main>
+  );
+}
+```
+
+#### Section Props
+
+| Prop           | Type                                                                      | Default     | Description                         |
+| -------------- | ------------------------------------------------------------------------- | ----------- | ----------------------------------- |
+| as             | ElementType                                                               | 'section'   | HTML element to render as           |
+| children       | React.ReactNode                                                           | required    | Content of the section              |
+| background     | 'white' \| 'light' \| 'primary' \| 'secondary' \| 'gradient' \| 'natural' | 'white'     | Background color/style              |
+| spacing        | 'none' \| 'small' \| 'medium' \| 'large'                                  | 'medium'    | Vertical padding amount             |
+| width          | 'full' \| 'container'                                                     | 'container' | Width behavior                      |
+| border         | 'none' \| 'top' \| 'bottom' \| 'both'                                     | 'none'      | Border placement                    |
+| className      | string                                                                    | undefined   | Optional additional CSS classes     |
+| innerClassName | string                                                                    | undefined   | Classes for the inner container     |
+| containerSize  | 'sm' \| 'md' \| 'lg' \| 'xl' \| 'full'                                    | 'xl'        | Max width for the content container |
+
+### MarketingSection Component
+
+The project includes a MarketingSection component located at `/src/components/MarketingSection/index.tsx`. This component:
+
+- Creates a full marketing section with title, subtitle, features, and CTA
+- Integrates the Feature component to display multiple features in a grid
+- Supports different background styles, spacing options, and text alignments
+- Uses tailwind-variants for conditional styling
+- Provides a customizable layout for marketing content
+
+Usage example:
+
+```tsx
+import MarketingSection from "@/components/MarketingSection";
+
+export default function AboutPage() {
+  return (
+    <main>
+      <MarketingSection
+        title="Why Choose Our Herbs"
+        subtitle="We provide the highest quality herbs with sustainable sourcing"
+        background="light"
+        alignment="center"
+        featureColumns={3}
+        features={[
+          {
+            iconName: "leaf",
+            title: "100% Organic",
+            description:
+              "All our herbs are certified organic and free from pesticides.",
+          },
+          {
+            iconName: "shipping",
+            title: "Fast Delivery",
+            description: "Quick and reliable shipping across the country.",
+          },
+          {
+            iconName: "check",
+            title: "Quality Guarantee",
+            description: "We stand behind the quality of all our products.",
+          },
+        ]}
+        ctaText="Shop Now"
+        ctaLink="/products"
+      />
+    </main>
+  );
+}
+```
+
+#### MarketingSection Props
+
+| Prop           | Type                                | Default   | Description                       |
+| -------------- | ----------------------------------- | --------- | --------------------------------- |
+| title          | string                              | required  | Section title                     |
+| subtitle       | string                              | undefined | Optional subtitle text            |
+| features       | FeatureProps[]                      | []        | Array of feature objects          |
+| ctaText        | string                              | undefined | Call-to-action button text        |
+| ctaLink        | string                              | undefined | Call-to-action button link        |
+| background     | 'white' \| 'light' \| 'gradient'    | 'white'   | Background style                  |
+| spacing        | 'normal' \| 'compact' \| 'spacious' | 'normal'  | Vertical padding amount           |
+| alignment      | 'left' \| 'center' \| 'right'       | 'left'    | Text alignment                    |
+| className      | string                              | undefined | Optional additional CSS classes   |
+| featureColumns | 1 \| 2 \| 3 \| 4                    | 3         | Number of columns in feature grid |
+
 This document will be updated as the project evolves.
