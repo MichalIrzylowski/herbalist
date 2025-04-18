@@ -4,13 +4,23 @@ import {
   FaMapMarkerAlt,
   FaSeedling,
   FaShoppingBasket,
+  FaMortarPestle,
 } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline, IoMdClose } from "react-icons/io";
 import { RiPlantFill, RiPlantLine, RiLeafLine } from "react-icons/ri";
 import { BiSearchAlt } from "react-icons/bi";
 import { MdOutlineLocalShipping, MdEmail } from "react-icons/md";
-import { BsArrowRight, BsTelephone } from "react-icons/bs";
-import { GiPlantRoots, GiMedicines } from "react-icons/gi";
+import { BsArrowRight, BsTelephone, BsMoonStars } from "react-icons/bs";
+import {
+  GiPlantRoots,
+  GiMedicines,
+  GiStomach,
+  GiHerbsBundle,
+  GiTeapot,
+  GiMedicinePills,
+} from "react-icons/gi";
+import { ImLab } from "react-icons/im";
+import { TbVirus } from "react-icons/tb";
 
 export const icons = {
   // Nature & Plants
@@ -20,11 +30,21 @@ export const icons = {
   plantOutline: RiPlantLine,
   leafOutline: RiLeafLine,
   roots: GiPlantRoots,
+  herbsBundle: GiHerbsBundle,
+  mortar: FaMortarPestle,
+  teapot: GiTeapot,
 
   // E-commerce
   basket: FaShoppingBasket,
   shipping: MdOutlineLocalShipping,
   medicines: GiMedicines,
+  pills: GiMedicinePills,
+
+  // Health & Wellness
+  stomach: GiStomach,
+  sleep: BsMoonStars,
+  immunity: TbVirus,
+  labMix: ImLab,
 
   // UI Elements
   search: BiSearchAlt,

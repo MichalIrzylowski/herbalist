@@ -49,27 +49,27 @@ export default function Home() {
               title: "Zioła na Trawienie",
               description:
                 "Naturalne wsparcie dla zdrowego układu pokarmowego.",
-              iconName: "medicines",
+              iconName: "stomach",
               padding: "medium",
             },
             {
               title: "Zioła Uspokajające",
               description: "Pomoc w redukcji stresu i poprawie jakości snu.",
-              iconName: "medicines",
+              iconName: "sleep",
               padding: "medium",
             },
             {
               title: "Zioła Wzmacniające",
               description:
                 "Wzmocnienie odporności i ogólnej witalności organizmu.",
-              iconName: "medicines",
+              iconName: "immunity",
               padding: "medium",
             },
             {
               title: "Mieszanki Ziołowe",
               description:
                 "Specjalnie skomponowane mieszanki dla kompleksowego działania.",
-              iconName: "medicines",
+              iconName: "herbsBundle",
               padding: "medium",
             },
           ]}
