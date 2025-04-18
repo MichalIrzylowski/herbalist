@@ -9,6 +9,7 @@ This is a Next.js project called "herbalist-v1" that is currently a static websi
 - Next.js for the React framework
 - TypeScript for type safety
 - Tailwind CSS for styling
+- Tailwind Variants for variant-based component styling
 - ESLint for code linting
 
 ## Project Structure
@@ -59,5 +60,32 @@ When helping with this project:
 - Leverage Tailwind's responsive design utilities (sm:, md:, lg:, etc.)
 - For complex components, consider using Tailwind's @apply directive in component-specific CSS modules only if necessary
 - Follow the existing color scheme and design system using Tailwind classes
+
+## Tailwind Variants Usage
+
+- Use tailwind-variants for creating component variants with conditional styling
+- Follow the API pattern for defining component variants:
+  ```typescript
+  const button = tv({
+    base: "px-4 py-2 rounded-md",
+    variants: {
+      color: {
+        primary: "bg-blue-500 text-white",
+        secondary: "bg-gray-200 text-gray-800",
+      },
+      size: {
+        small: "text-sm",
+        large: "text-lg",
+      },
+    },
+    defaultVariants: {
+      color: "primary",
+      size: "small",
+    },
+  });
+  ```
+- Prefer tailwind-variants over custom CSS classes or complex conditional styling in JSX
+- Maintain consistency by using the same variant names across similar components
+- Document component variants in the component file
 
 This document will be updated as the project evolves.
