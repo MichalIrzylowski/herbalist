@@ -14,7 +14,7 @@ export default function Hero({
   title = "Naturalne lekarstwa, dostarczane prosto do Twoich drzwi",
   subtitle = "Najwyższej jakości zioła pozyskiwane bezpośrednio z zrównoważonych farm. Doświadcz mocy naturalnego zdrowia.",
   ctaText = "Odkryj Naszą Kolekcję",
-  ctaLink = "/colection",
+  ctaLink = "/products",
   aboutUsLink = "/about-us",
 }: HeroProps) {
   return (
