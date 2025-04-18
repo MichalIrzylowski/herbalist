@@ -10,8 +10,8 @@ export interface CompactHeroProps {
 }
 
 export default function CompactHero({
-  title = "Page Title",
-  subtitle = "Short description of this section",
+  title = "Tytuł Strony",
+  subtitle = "Krótki opis tej sekcji",
   ctaText,
   ctaLink,
 }: CompactHeroProps) {

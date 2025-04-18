@@ -10,6 +10,7 @@ const linkStyles = tv({
       secondary:
         "text-emerald-700 bg-transparent border-2 border-emerald-700 hover:bg-emerald-50 rounded-md px-8 py-4 font-medium focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2",
       footer: "text-slate-600 hover:text-emerald-700 transition-colors",
+      nav: "text-slate-700 hover:text-emerald-700 font-medium transition-colors",
     },
     size: {
       sm: "text-sm px-4 py-2",
@@ -31,6 +32,10 @@ const linkStyles = tv({
     {
       variant: "footer",
       class: "px-0 py-0 justify-start", // Remove padding for footer links
+    },
+    {
+      variant: "nav",
+      class: "px-3 py-2 text-base", // Specific padding for nav links
     },
   ],
 });

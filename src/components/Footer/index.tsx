@@ -14,8 +14,8 @@ export function Footer() {
               Herbalist
             </h3>
             <p className="text-slate-600 mb-6">
-              Premium quality herbs sourced directly from sustainable farms. We
-              provide nature&apos;s remedies, delivered to your door.
+              Zioła najwyższej jakości pochodzące bezpośrednio ze zrównoważonych
+              upraw. Dostarczamy naturalne remedium prosto pod Twoje drzwi.
             </p>
             <div className="flex space-x-4">
               <a
@@ -51,22 +51,22 @@ export function Footer() {
 
           <div>
             <h3 className="text-lg font-bold text-emerald-900 mb-4">
-              Quick Links
+              Szybkie Linki
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" variant="footer" size="none">
-                  Home
+                  Strona Główna
                 </Link>
               </li>
               <li>
                 <Link href="/products" variant="footer" size="none">
-                  Products
+                  Produkty
                 </Link>
               </li>
               <li>
                 <Link href="/about-us" variant="footer" size="none">
-                  About Us
+                  O Nas
                 </Link>
               </li>
             </ul>
@@ -74,34 +74,34 @@ export function Footer() {
 
           <div>
             <h3 className="text-lg font-bold text-emerald-900 mb-4">
-              Categories
+              Kategorie
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link href="#" variant="footer" size="none">
-                  Medicinal Herbs
+                  Zioła Lecznicze
                 </Link>
               </li>
               <li>
                 <Link href="#" variant="footer" size="none">
-                  Culinary Herbs
+                  Zioła Kulinarne
                 </Link>
               </li>
               <li>
                 <Link href="#" variant="footer" size="none">
-                  Essential Oils
+                  Olejki Eteryczne
                 </Link>
               </li>
               <li>
                 <Link href="#" variant="footer" size="none">
-                  Tea Collections
+                  Kolekcje Herbat
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-emerald-900 mb-4">Contact</h3>
+            <h3 className="text-lg font-bold text-emerald-900 mb-4">Kontakt</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Icon
@@ -111,7 +111,7 @@ export function Footer() {
                   className="mr-2 flex-shrink-0"
                 />
                 <span className="text-slate-600">
-                  123 Herb Street, Green City
+                  ul. Ziołowa 123, Zielone Miasto
                 </span>
               </li>
               <li className="flex items-center">
@@ -121,7 +121,7 @@ export function Footer() {
                   color="primary"
                   className="mr-2 flex-shrink-0"
                 />
-                <span className="text-slate-600">+1 (555) 123-4567</span>
+                <span className="text-slate-600">+48 555 123 456</span>
               </li>
               <li className="flex items-center">
                 <Icon
@@ -130,7 +130,7 @@ export function Footer() {
                   color="primary"
                   className="mr-2 flex-shrink-0"
                 />
-                <span className="text-slate-600">info@herbalist.com</span>
+                <span className="text-slate-600">kontakt@herbalist.pl</span>
               </li>
             </ul>
           </div>
@@ -140,17 +140,17 @@ export function Footer() {
       <Section background="white" spacing="small" as="div">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-600 text-sm mb-4 md:mb-0">
-            © {currentYear} Herbalist. All rights reserved.
+            © {currentYear} Herbalist. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex space-x-6">
             <Link href="#" variant="footer" size="none" className="text-sm">
-              Privacy Policy
+              Polityka Prywatności
             </Link>
             <Link href="#" variant="footer" size="none" className="text-sm">
-              Terms of Service
+              Warunki Korzystania
             </Link>
             <Link href="#" variant="footer" size="none" className="text-sm">
-              Shipping Info
+              Informacje o Dostawie
             </Link>
           </div>
         </div>
