@@ -19,7 +19,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10">
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-10 z-0">
         <Icon
           name="plantOutline"
           size="xl"
@@ -27,7 +27,7 @@ export default function Hero({
           className="w-[500px] h-[500px]"
         />
       </div>
-      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 opacity-10">
+      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 opacity-10 -z-10">
         <Icon
           name="leafOutline"
           size="xl"
@@ -36,7 +36,7 @@ export default function Hero({
         />
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
+      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 max-w-2xl">
             <Heading level={1} color="primary" marginBottom="large">

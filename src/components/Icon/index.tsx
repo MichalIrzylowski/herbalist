@@ -5,6 +5,12 @@ import {
   FaSeedling,
   FaShoppingBasket,
   FaMortarPestle,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaPinterestP,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline, IoMdClose } from "react-icons/io";
 import { RiPlantFill, RiPlantLine, RiLeafLine } from "react-icons/ri";
@@ -56,6 +62,14 @@ export const icons = {
   location: FaMapMarkerAlt,
   phone: BsTelephone,
   email: MdEmail,
+
+  // Social Media
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  twitter: FaTwitter,
+  youtube: FaYoutube,
+  pinterest: FaPinterestP,
+  linkedin: FaLinkedinIn,
 };
 
 export type IconName = keyof typeof icons;
