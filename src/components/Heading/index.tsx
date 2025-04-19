@@ -24,6 +24,13 @@ const headingStyles = tv({
       semibold: "font-semibold",
       bold: "font-bold",
     },
+    marginTop: {
+      none: "mt-0",
+      small: "mt-2",
+      medium: "mt-4",
+      large: "mt-6",
+      xlarge: "mt-8",
+    },
     marginBottom: {
       none: "mb-0",
       small: "mb-2",
@@ -37,6 +44,7 @@ const headingStyles = tv({
     color: "default",
     weight: "bold",
     marginBottom: "medium",
+    marginTop: "none",
   },
 });
 
@@ -56,6 +64,7 @@ export function Heading({
   marginBottom,
   className,
   children,
+  marginTop,
   ...props
 }: HeadingProps) {
   const effectiveSize = size || (`h${level}` as HeadingSize);
@@ -68,6 +77,7 @@ export function Heading({
         color,
         weight,
         marginBottom,
+        marginTop,
         className,
       }),
       ...props,

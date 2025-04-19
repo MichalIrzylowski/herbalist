@@ -4,6 +4,7 @@ import { Icon } from "@/components/Icon";
 import MarketingSection from "@/components/MarketingSection";
 import { Section } from "@/components/Section";
 import { TeamMember } from "@/components/TeamMember";
+import { HighlightList } from "@/components/HighlightList";
 
 export default function AboutUsPage() {
   return (
@@ -21,21 +22,48 @@ export default function AboutUsPage() {
             <Heading level={2} color="primary" marginBottom="large">
               Nasza Historia
             </Heading>
-
             <div className="prose prose-emerald prose-lg mx-auto">
               <p>
-                Firma Herbalist została założona w 2015 roku przez grupę
-                pasjonatów zielarstwa i naturalnych metod dbania o zdrowie.
-                Naszą misją od początku było dostarczanie najwyższej jakości
-                ziół, które pomagają ludziom żyć zdrowiej i w harmonii z naturą.
+                Herbalist powstał z pasji do ziół i natury, a naszym celem od
+                zawsze było jedno: dostarczać klientom najwyższej jakości
+                produkty zielarskie szybko, tanio i skutecznie.
               </p>
+              <Heading
+                level={3}
+                size="h5"
+                color="primary"
+                weight="semibold"
+                marginTop="large"
+                marginBottom="small"
+                className="text-xl"
+              >
+                Wyróżnia nas:
+              </Heading>
 
+              <HighlightList
+                className="mb-6"
+                items={[
+                  {
+                    title: "Ekspresowa realizacja zamówień",
+                    content: "działamy sprawnie i bez zbędnych opóźnień.",
+                  },
+                  {
+                    title: "Konkurencyjne ceny",
+                    content:
+                      "jesteśmy jednymi z najtańszych na rynku bez kompromisów jakościowych.",
+                  },
+                  {
+                    title: "Indywidualne podejście",
+                    content:
+                      "rozumiemy potrzeby naszych klientów i zawsze szukamy najlepszego rozwiązania.",
+                  },
+                ]}
+              />
               <p>
-                To, co zaczęło się jako mały rodzinny biznes, szybko
-                przekształciło się w rozpoznawalną markę cenioną za jakość
-                produktów i zaangażowanie w zrównoważone praktyki uprawy.
-                Dzisiaj współpracujemy z najlepszymi rolnikami w Polsce i
-                Europie, którzy dzielą nasze wartości i pasję do ziół.
+                Za nami stoi wiele lat doświadczenia i głęboka znajomość branży
+                zielarskiej. Dzięki temu jesteśmy w stanie spełnić nawet
+                najbardziej nietypowe zamówienia — jeśli istnieje zioło, którego
+                potrzebujesz, my je zdobędziemy.
               </p>
 
               <div className="my-8 flex justify-center">
@@ -53,12 +81,12 @@ export default function AboutUsPage() {
                   </div>
                 </div>
               </div>
-
               <p>
-                Nasze produkty są zbierane ręcznie w optymalnym czasie, aby
-                zachować maksimum wartości odżywczych i właściwości leczniczych.
-                Nie stosujemy pestycydów ani sztucznych nawozów, dzięki czemu
-                nasze zioła są w pełni naturalne i bezpieczne.
+                Współpracujemy z zaufanymi dostawcami z całej Polski, a nasze
+                zioła są starannie selekcjonowane, naturalne i bezpieczne.
+                Herbalist to jakość, której możesz zaufać – niezależnie od tego,
+                czy szukasz popularnych, czy rzadkich i trudno dostępnych
+                surowców.
               </p>
             </div>
           </div>
@@ -109,26 +137,12 @@ export default function AboutUsPage() {
             Nasz Zespół
           </Heading>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="flex justify-center gap-8 mt-12">
             <TeamMember
-              name="Anna Kowalska"
-              title="Założycielka & Dyrektor"
-              description="Ekspertka w dziedzinie zielarstwa z ponad 15-letnim doświadczeniem i pasją do naturalnych metod leczenia."
+              name="Wiesław Tęcza"
+              title="Założyciel & Dyrektor"
+              description="Ekspert w dziedzinie zielarstwa z ponad 15-letnim doświadczeniem i pasją do naturalnych metod leczenia."
               iconName="mortar"
-            />
-
-            <TeamMember
-              name="Piotr Nowak"
-              title="Główny Zielarz"
-              description="Specjalista od kompozycji ziołowych z wiedzą przekazywaną przez pokolenia i certyfikatem fitoterapii."
-              iconName="plantOutline"
-            />
-
-            <TeamMember
-              name="Marta Wiśniewska"
-              title="Dyrektor ds. Zrównoważonego Rozwoju"
-              description="Odpowiedzialna za ekologiczne praktyki uprawy i relacje z lokalnymi rolnikami."
-              iconName="leaf"
             />
           </div>
         </Section>

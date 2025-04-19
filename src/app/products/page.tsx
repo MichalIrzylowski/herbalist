@@ -23,49 +23,58 @@ export default function ProductsPage() {
             <ProductCard
               name="Mięta Pieprzowa"
               description="Orzeźwiający aromat i właściwości wspierające trawienie. Idealna na napary i herbaty ziołowe."
-              weight="50g"
+              weight="Hurtowa"
               tag="Bestseller"
               iconName="seedling"
             />
-
             <ProductCard
               name="Rumianek Pospolity"
               description="Znany ze swoich właściwości uspokajających i przeciwzapalnych. Wspomaga sen i łagodzi podrażnienia."
-              weight="40g"
+              weight="Hurtowa"
               tag="Ekologiczny"
               iconName="leaf"
             />
-
             <ProductCard
               name="Melisa Lekarska"
               description="Delikatny cytrynowy aromat i właściwości relaksujące. Pomaga zredukować stres i poprawić jakość snu."
-              weight="30g"
+              weight="Hurtowa"
               tag="Nowość"
               iconName="plant"
             />
-
             <ProductCard
-              name="Mieszanka Digestive"
-              description="Specjalna mieszanka ziół wspomagających trawienie, zawierająca miętę, kminek i anyż."
-              weight="60g"
-              tag="Polecane"
-              iconName="herbsBundle"
+              name="Liść Brzozy"
+              description="Wspomaga układ moczowy i pomaga w detoksykacji organizmu. Znany ze swoich właściwości moczopędnych."
+              weight="Hurtowa"
+              tag="Detox"
+              imageSrc="/birch-leaf.jpg"
             />
-
             <ProductCard
-              name="Zestaw Wzmacniający"
-              description="Mieszanka ziół wzmacniających odporność z dodatkiem dzikiej róży i jeżówki purpurowej."
-              weight="45g"
-              tag="Sezonowy"
-              iconName="immunity"
+              name="Liść Maliny"
+              description="Tradycyjnie stosowany przez kobiety, bogaty w minerały i witaminy. Wspiera zdrowie układu rozrodczego."
+              weight="Hurtowa"
+              tag="Dla Kobiet"
+              imageSrc="/raspberry-leaf.jpg"
             />
-
             <ProductCard
-              name="Mieszanka Relaksująca"
-              description="Kompozycja ziół o działaniu uspokajającym, zawierająca melisę, lawendę i rumianek."
-              weight="35g"
-              tag="Bestseller"
-              iconName="sleep"
+              name="Mniszek Lekarski"
+              description="Liście, kwiaty i korzeń mniszka lekarskiego. Wspiera funkcjonowanie wątroby i procesy trawienia."
+              weight="Hurtowa"
+              tag="Kompleksowy"
+              iconName="plantOutline"
+            />
+            <ProductCard
+              name="Korzeń Lubczyku"
+              description="Aromatyczny korzeń o intensywnym zapachu. Wspomaga trawienie"
+              weight="Hurtowa"
+              tag="Aromatyczny"
+              iconName="seedling"
+            />
+            <ProductCard
+              name="Korzeń Prawoślazu"
+              description="Łagodzi podrażnienia błon śluzowych. Idealny przy problemach z gardłem i układem oddechowym."
+              weight="Hurtowa"
+              tag="Kojący"
+              iconName="plant"
             />
           </div>
         </Section>

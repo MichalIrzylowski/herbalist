@@ -1,6 +1,8 @@
-import { Icon } from "@/components/Icon";
 import { Link } from "@/components/Link";
 import { Section } from "@/components/Section";
+import TextWithIcon from "@/components/TextWithIcon";
+import ExternalLink from "@/components/ExternalLink";
+import { Heading } from "@/components/Heading";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,49 +12,49 @@ export function Footer() {
       <Section background="light" border="top" spacing="medium" as="div">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold text-emerald-900 mb-4">
+            <Heading level={3} size="h5" color="primary" marginBottom="small">
               Herbalist
-            </h3>
+            </Heading>
             <p className="text-slate-600 mb-6">
               Zioła najwyższej jakości pochodzące bezpośrednio ze zrównoważonych
               upraw. Dostarczamy naturalne remedium prosto pod Twoje drzwi.
             </p>
             <div className="flex space-x-4">
-              <a
+              <ExternalLink
                 href="#"
-                className="text-emerald-700 hover:text-emerald-800"
-                aria-label="Facebook"
-              >
-                <Icon name="facebook" size="sm" />
-              </a>
-              <a
+                variant="social"
+                iconName="facebook"
+                iconSize="sm"
+                ariaLabel="Facebook"
+              />
+              <ExternalLink
                 href="#"
-                className="text-emerald-700 hover:text-emerald-800"
-                aria-label="Instagram"
-              >
-                <Icon name="instagram" size="sm" />
-              </a>
-              <a
+                variant="social"
+                iconName="instagram"
+                iconSize="sm"
+                ariaLabel="Instagram"
+              />
+              <ExternalLink
                 href="#"
-                className="text-emerald-700 hover:text-emerald-800"
-                aria-label="Twitter"
-              >
-                <Icon name="twitter" size="sm" />
-              </a>
-              <a
+                variant="social"
+                iconName="twitter"
+                iconSize="sm"
+                ariaLabel="Twitter"
+              />
+              <ExternalLink
                 href="#"
-                className="text-emerald-700 hover:text-emerald-800"
-                aria-label="Pinterest"
-              >
-                <Icon name="pinterest" size="sm" />
-              </a>
+                variant="social"
+                iconName="pinterest"
+                iconSize="sm"
+                ariaLabel="Pinterest"
+              />
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-emerald-900 mb-4">
+            <Heading level={3} size="h5" color="primary" marginBottom="small">
               Szybkie Linki
-            </h3>
+            </Heading>
             <ul className="space-y-2">
               <li>
                 <Link href="/" variant="footer" size="none">
@@ -73,9 +75,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-emerald-900 mb-4">
+            <Heading level={3} size="h5" color="primary" marginBottom="small">
               Kategorie
-            </h3>
+            </Heading>
             <ul className="space-y-2">
               <li>
                 <Link href="#" variant="footer" size="none">
@@ -101,36 +103,52 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-emerald-900 mb-4">Kontakt</h3>
+            <Heading level={3} size="h5" color="primary" marginBottom="small">
+              Kontakt
+            </Heading>
             <ul className="space-y-3">
-              <li className="flex items-center">
-                <Icon
-                  name="location"
-                  size="sm"
-                  color="primary"
-                  className="mr-2 flex-shrink-0"
+              <li>
+                <TextWithIcon
+                  iconName="location"
+                  text="ul. Świętego Michała Archanioła 10, 09-100 Siedlin"
+                  iconColor="primary"
+                  textColor="default"
+                  iconPosition="left"
                 />
-                <span className="text-slate-600">
-                  ul. Ziołowa 123, Zielone Miasto
-                </span>
               </li>
-              <li className="flex items-center">
-                <Icon
-                  name="phone"
-                  size="sm"
-                  color="primary"
-                  className="mr-2 flex-shrink-0"
+              <li>
+                <TextWithIcon
+                  iconName="phone"
+                  text={
+                    <ExternalLink
+                      href="tel:+48664053264"
+                      variant="footer"
+                      size="none"
+                      openInNewTab={false}
+                    >
+                      +48 664 053 264
+                    </ExternalLink>
+                  }
+                  iconColor="primary"
+                  spacing="default"
                 />
-                <span className="text-slate-600">+48 555 123 456</span>
               </li>
-              <li className="flex items-center">
-                <Icon
-                  name="email"
-                  size="sm"
-                  color="primary"
-                  className="mr-2 flex-shrink-0"
+              <li>
+                <TextWithIcon
+                  iconName="email"
+                  text={
+                    <ExternalLink
+                      href="mailto:kontakt@herbalist.pl"
+                      variant="footer"
+                      size="none"
+                      openInNewTab={false}
+                    >
+                      kontakt@herbalist.pl
+                    </ExternalLink>
+                  }
+                  iconColor="primary"
+                  spacing="default"
                 />
-                <span className="text-slate-600">kontakt@herbalist.pl</span>
               </li>
             </ul>
           </div>
