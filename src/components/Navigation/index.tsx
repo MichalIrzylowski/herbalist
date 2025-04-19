@@ -123,7 +123,7 @@ export function Navigation({ className }: NavigationProps) {
               {mobileMenuOpen ? (
                 <Icon name="close" size="md" aria-hidden={true} />
               ) : (
-                <Icon name="basket" size="md" aria-hidden={true} />
+                <Icon name="menu" size="md" aria-hidden={true} />
               )}
             </button>
           </div>
@@ -154,35 +154,28 @@ export function Navigation({ className }: NavigationProps) {
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
-                // Using anchor element to support onClick
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
-                  className={`inline-flex items-center justify-center transition-colors duration-300 focus:outline-none text-slate-700 hover:text-emerald-700 font-medium px-3 py-2 text-base ${
-                    isActive ? "text-emerald-700" : ""
-                  }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLinkClick();
-                    window.location.href = link.href;
-                  }}
+                  variant="nav"
+                  size="none"
+                  className={isActive ? "text-emerald-700" : ""}
+                  onClick={handleLinkClick}
                 >
                   {link.name}
-                </a>
+                </Link>
               );
             })}
             <div className="border-t border-emerald-100 pt-4 mt-2">
-              <a
+              <Link
                 href="/products"
-                className="inline-flex items-center justify-center w-full text-white bg-emerald-700 hover:bg-emerald-800 rounded-md px-4 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick();
-                  window.location.href = "/products";
-                }}
+                variant="primary"
+                size="sm"
+                className="w-full"
+                onClick={handleLinkClick}
               >
                 Kup Teraz
-              </a>
+              </Link>
             </div>
           </div>
         </div>

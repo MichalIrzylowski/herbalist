@@ -11,6 +11,7 @@ import {
   FaYoutube,
   FaPinterestP,
   FaLinkedinIn,
+  FaBars,
 } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline, IoMdClose } from "react-icons/io";
 import { RiPlantFill, RiPlantLine, RiLeafLine } from "react-icons/ri";
@@ -57,6 +58,7 @@ export const icons = {
   check: IoMdCheckmarkCircleOutline,
   close: IoMdClose,
   arrowRight: BsArrowRight,
+  menu: FaBars,
 
   // Contact & Location
   location: FaMapMarkerAlt,

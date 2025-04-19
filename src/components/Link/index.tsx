@@ -44,6 +44,7 @@ export interface LinkProps extends VariantProps<typeof linkStyles> {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export function Link({
