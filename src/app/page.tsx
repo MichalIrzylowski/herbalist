@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <div>
       <main>
-        <Hero />
+        <Hero
+          imageSrc="/herbs-placeholder.jpg"
+          imageAlt="Kolekcja ziół leczniczych"
+        />
         <MarketingSection
           title="Dlaczego Warto Wybrać Nasze Zioła?"
           subtitle="Odkryj naturalne rozwiązania dla zdrowia i dobrego samopoczucia z naszymi starannie wyselekcjonowanymi ziołami."

@@ -1,6 +1,7 @@
 import { Link } from "../Link";
 import { Icon } from "../Icon";
 import { Heading } from "../Heading";
+import Image from "next/image";
 
 export interface HeroProps {
   title?: string;
@@ -8,6 +9,8 @@ export interface HeroProps {
   ctaText?: string;
   ctaLink?: string;
   aboutUsLink?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export default function Hero({
@@ -16,6 +19,8 @@ export default function Hero({
   ctaText = "Odkryj Naszą Kolekcję",
   ctaLink = "/products",
   aboutUsLink = "/about-us",
+  imageSrc,
+  imageAlt = "Naturalne zioła",
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
@@ -58,9 +63,21 @@ export default function Hero({
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative w-full max-w-md h-80 sm:h-96 md:h-[450px] lg:h-[500px]">
               <div className="absolute inset-0 bg-emerald-200 rounded-tr-3xl rounded-bl-3xl shadow-lg overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/herbs-placeholder.jpg')] bg-cover bg-center opacity-80">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-800/40 to-transparent"></div>
-                </div>
+                {imageSrc ? (
+                  <>
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-emerald-800/40 to-transparent"></div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-[url('/herbs-placeholder.jpg')] bg-cover bg-center opacity-80">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-emerald-800/40 to-transparent"></div>
+                  </div>
+                )}
               </div>
               <div className="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg">
                 <Icon name="seedling" size="lg" color="primary" />
