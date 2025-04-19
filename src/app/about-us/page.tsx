@@ -5,6 +5,42 @@ import MarketingSection from "@/components/MarketingSection";
 import { Section } from "@/components/Section";
 import { TeamMember } from "@/components/TeamMember";
 import { HighlightList } from "@/components/HighlightList";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "O Nas - Poznaj Historię i Wartości Herbalist",
+  description:
+    "Dowiedz się więcej o firmie Herbalist - historii naszej pasji do ziół, wartościach i zespole ekspertów. Odkryj co sprawia, że nasze zioła są wyjątkowe.",
+  keywords: [
+    "herbalist",
+    "o nas",
+    "historia firmy",
+    "zespół zielarski",
+    "wartości firmy",
+    "jakość ziół",
+    "eksperci zielarscy",
+    "zrównoważony rozwój",
+    "transparentność",
+  ],
+  alternates: {
+    canonical: "/about-us",
+  },
+  openGraph: {
+    title: "O Nas - Poznaj Historię i Wartości Herbalist",
+    description:
+      "Dowiedz się więcej o firmie Herbalist - historii naszej pasji do ziół, wartościach i zespole ekspertów. Odkryj co sprawia, że nasze zioła są wyjątkowe.",
+    url: "/about-us",
+    type: "website",
+    images: [
+      {
+        url: "/herbs-placeholder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zespół Herbalist - Eksperci od ziół",
+      },
+    ],
+  },
+};
 
 export default function AboutUsPage() {
   return (

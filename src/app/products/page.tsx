@@ -2,6 +2,42 @@ import CompactHero from "@/components/CompactHero";
 import { Heading } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { Section } from "@/components/Section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nasza Kolekcja Ziół i Produktów Zielarskich",
+  description:
+    "Odkryj naszą bogatą kolekcję najwyższej jakości ziół: mięta pieprzowa, rumianek, melisa, liść brzozy i wiele innych. Tylko naturalne i starannie wyselekcjonowane zioła.",
+  keywords: [
+    "zioła lecznicze",
+    "mięta pieprzowa",
+    "rumianek",
+    "melisa",
+    "liść brzozy",
+    "liść maliny",
+    "mniszek lekarski",
+    "korzeń lubczyku",
+    "zioła hurtowo",
+  ],
+  alternates: {
+    canonical: "/products",
+  },
+  openGraph: {
+    title: "Nasza Kolekcja Ziół i Produktów Zielarskich | Herbalist",
+    description:
+      "Odkryj naszą bogatą kolekcję najwyższej jakości ziół: mięta pieprzowa, rumianek, melisa, liść brzozy i wiele innych. Tylko naturalne i starannie wyselekcjonowane zioła.",
+    url: "/products",
+    type: "website",
+    images: [
+      {
+        url: "/herbs-placeholder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kolekcja ziół leczniczych Herbalist",
+      },
+    ],
+  },
+};
 
 export default function ProductsPage() {
   return (

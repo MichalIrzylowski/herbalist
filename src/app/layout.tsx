@@ -15,8 +15,66 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Herbalist",
-  description: "Strona wizytówka firmy Herbalist",
+  title: {
+    default: "Herbalist | Najwyższej Jakości Zioła",
+    template: "%s | Herbalist",
+  },
+  description:
+    "Wysokiej jakości zioła i produkty zielarskie w sprzedaży hurtowej. Szybka realizacja, konkurencyjne ceny i profesjonalna obsługa.",
+  keywords: [
+    "zioła",
+    "zielarstwo",
+    "sprzedaż ziół",
+    "zioła hurtowo",
+    "sklep zielarski",
+    "produkty zielarskie",
+    "naturalne zioła",
+    "ekologiczne zioła",
+    "zioła lecznicze",
+  ],
+  authors: [{ name: "Herbalist" }],
+  creator: "Herbalist",
+  publisher: "Herbalist",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://www.herbalist.pl"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "pl-PL": "/",
+    },
+  },
+  openGraph: {
+    title: "Herbalist | Najwyższej Jakości Zioła",
+    description:
+      "Wysokiej jakości zioła i produkty zielarskie w sprzedaży hurtowej. Szybka realizacja, konkurencyjne ceny i profesjonalna obsługa.",
+    url: "https://www.herbalist.pl",
+    siteName: "Herbalist",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/herbs-placeholder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Herbalist - Najwyższej Jakości Zioła",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
