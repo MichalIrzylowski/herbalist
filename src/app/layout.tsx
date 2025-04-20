@@ -32,6 +32,27 @@ export const metadata: Metadata = {
     "ekologiczne zioła",
     "zioła lecznicze",
   ],
+  icons: {
+    icon: [
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png" }],
+    other: [
+      { rel: "mask-icon", url: "/icons/favicon.ico" },
+      { rel: "shortcut icon", url: "/icons/favicon.ico" },
+      {
+        rel: "android-chrome",
+        sizes: "192x192",
+        url: "/icons/android-chrome-192x192.png",
+      },
+      {
+        rel: "android-chrome",
+        sizes: "512x512",
+        url: "/icons/android-chrome-512x512.png",
+      },
+    ],
+  },
   authors: [{ name: "Herbalist" }],
   creator: "Herbalist",
   publisher: "Herbalist",
