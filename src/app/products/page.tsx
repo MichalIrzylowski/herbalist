@@ -1,5 +1,6 @@
 import CompactHero from "@/components/CompactHero";
 import { Heading } from "@/components/Heading";
+import { IconName } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { Section } from "@/components/Section";
 import type { Metadata } from "next";
@@ -39,7 +40,102 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsPage() {
+export interface ProductsPageProps {
+  searchParams: Promise<{
+    category: string;
+  }>;
+}
+
+const products = [
+  {
+    name: "Mięta Pieprzowa",
+    description:
+      "Orzeźwiający aromat i właściwości wspierające trawienie. Idealna na napary i herbaty ziołowe.",
+    weight: "Hurtowo",
+    tag: "Kulinarne",
+    iconName: "seedling",
+  },
+  {
+    name: "Rumianek Pospolity",
+    description:
+      "Znany ze swoich właściwości uspokajających i przeciwzapalnych. Wspomaga sen i łagodzi podrażnienia.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    iconName: "leaf",
+  },
+  {
+    name: "Melisa Lekarska",
+    description:
+      "Delikatny cytrynowy aromat i właściwości relaksujące. Pomaga zredukować stres i poprawić jakość snu.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    iconName: "plant",
+  },
+  {
+    name: "Liść Brzozy",
+    description:
+      "Wspomaga układ moczowy i pomaga w detoksykacji organizmu. Znany ze swoich właściwości moczopędnych.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    imageSrc: "/birch-leaf.jpg",
+  },
+  {
+    name: "Liść Maliny",
+    description:
+      "Tradycyjnie stosowany przez kobiety, bogaty w minerały i witaminy. Wspiera zdrowie układu rozrodczego.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    imageSrc: "/raspberry-leaf.jpg",
+  },
+  {
+    name: "Mniszek Lekarski",
+    description:
+      "Liście, kwiaty i korzeń mniszka lekarskiego. Wspiera funkcjonowanie wątroby i procesy trawienia.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    iconName: "plantOutline",
+  },
+  {
+    name: "Korzeń Lubczyku",
+    description:
+      "Aromatyczny korzeń o intensywnym zapachu. Wspomaga trawienie i dodaje smaku potrawom.",
+    weight: "Hurtowo",
+    tag: "Kulinarne",
+    iconName: "seedling",
+  },
+  {
+    name: "Korzeń Prawoślazu",
+    description:
+      "Łagodzi podrażnienia błon śluzowych. Idealny przy problemach z gardłem i układem oddechowym.",
+    weight: "Hurtowo",
+    tag: "Lecznicze",
+    iconName: "plant",
+  },
+];
+
+export default async function ProductsPage({
+  searchParams,
+}: ProductsPageProps) {
+  const { category } = await searchParams;
+
+  const filteredProducts = category
+    ? products.filter(
+        (product) => product.tag.toLowerCase() === category.toLowerCase()
+      )
+    : products;
+
+  const productsComponents = filteredProducts.map((product, index) => (
+    <ProductCard
+      key={index}
+      name={product.name}
+      description={product.description}
+      weight={product.weight}
+      tag={product.tag}
+      imageSrc={product.imageSrc}
+      iconName={product.iconName as IconName}
+    />
+  ));
+
   return (
     <div>
       <main>
@@ -49,69 +145,12 @@ export default function ProductsPage() {
           ctaText="Skontaktuj się z Nami"
           ctaLink="/contact"
         />
-
         <Section background="white" spacing="large">
           <Heading level={2} color="primary" marginBottom="medium">
             Nasze Produkty
           </Heading>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            <ProductCard
-              name="Mięta Pieprzowa"
-              description="Orzeźwiający aromat i właściwości wspierające trawienie. Idealna na napary i herbaty ziołowe."
-              weight="Hurtowa"
-              tag="Bestseller"
-              iconName="seedling"
-            />
-            <ProductCard
-              name="Rumianek Pospolity"
-              description="Znany ze swoich właściwości uspokajających i przeciwzapalnych. Wspomaga sen i łagodzi podrażnienia."
-              weight="Hurtowa"
-              tag="Ekologiczny"
-              iconName="leaf"
-            />
-            <ProductCard
-              name="Melisa Lekarska"
-              description="Delikatny cytrynowy aromat i właściwości relaksujące. Pomaga zredukować stres i poprawić jakość snu."
-              weight="Hurtowa"
-              tag="Nowość"
-              iconName="plant"
-            />
-            <ProductCard
-              name="Liść Brzozy"
-              description="Wspomaga układ moczowy i pomaga w detoksykacji organizmu. Znany ze swoich właściwości moczopędnych."
-              weight="Hurtowa"
-              tag="Detox"
-              imageSrc="/birch-leaf.jpg"
-            />
-            <ProductCard
-              name="Liść Maliny"
-              description="Tradycyjnie stosowany przez kobiety, bogaty w minerały i witaminy. Wspiera zdrowie układu rozrodczego."
-              weight="Hurtowa"
-              tag="Dla Kobiet"
-              imageSrc="/raspberry-leaf.jpg"
-            />
-            <ProductCard
-              name="Mniszek Lekarski"
-              description="Liście, kwiaty i korzeń mniszka lekarskiego. Wspiera funkcjonowanie wątroby i procesy trawienia."
-              weight="Hurtowa"
-              tag="Kompleksowy"
-              iconName="plantOutline"
-            />
-            <ProductCard
-              name="Korzeń Lubczyku"
-              description="Aromatyczny korzeń o intensywnym zapachu. Wspomaga trawienie"
-              weight="Hurtowa"
-              tag="Aromatyczny"
-              iconName="seedling"
-            />
-            <ProductCard
-              name="Korzeń Prawoślazu"
-              description="Łagodzi podrażnienia błon śluzowych. Idealny przy problemach z gardłem i układem oddechowym."
-              weight="Hurtowa"
-              tag="Kojący"
-              iconName="plant"
-            />
+            {productsComponents}
           </div>
         </Section>
       </main>

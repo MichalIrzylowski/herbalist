@@ -19,36 +19,7 @@ export function Footer() {
               Zioła najwyższej jakości pochodzące bezpośrednio ze zrównoważonych
               upraw. Dostarczamy naturalne remedium prosto pod Twoje drzwi.
             </p>
-            <div className="flex space-x-4">
-              <ExternalLink
-                href="#"
-                variant="social"
-                iconName="facebook"
-                iconSize="sm"
-                ariaLabel="Facebook"
-              />
-              <ExternalLink
-                href="#"
-                variant="social"
-                iconName="instagram"
-                iconSize="sm"
-                ariaLabel="Instagram"
-              />
-              <ExternalLink
-                href="#"
-                variant="social"
-                iconName="twitter"
-                iconSize="sm"
-                ariaLabel="Twitter"
-              />
-              <ExternalLink
-                href="#"
-                variant="social"
-                iconName="pinterest"
-                iconSize="sm"
-                ariaLabel="Pinterest"
-              />
-            </div>
+            <div className="flex space-x-4"></div>
           </div>
 
           <div>
@@ -80,23 +51,21 @@ export function Footer() {
             </Heading>
             <ul className="space-y-2">
               <li>
-                <Link href="#" variant="footer" size="none">
+                <Link
+                  href="/products?category=lecznicze"
+                  variant="footer"
+                  size="none"
+                >
                   Zioła Lecznicze
                 </Link>
               </li>
               <li>
-                <Link href="#" variant="footer" size="none">
+                <Link
+                  href="/products?category=kulinarne"
+                  variant="footer"
+                  size="none"
+                >
                   Zioła Kulinarne
-                </Link>
-              </li>
-              <li>
-                <Link href="#" variant="footer" size="none">
-                  Olejki Eteryczne
-                </Link>
-              </li>
-              <li>
-                <Link href="#" variant="footer" size="none">
-                  Kolekcje Herbat
                 </Link>
               </li>
             </ul>
@@ -110,7 +79,16 @@ export function Footer() {
               <li>
                 <TextWithIcon
                   iconName="location"
-                  text="ul. Świętego Michała Archanioła 10, 09-100 Siedlin"
+                  text={
+                    <ExternalLink
+                      href="https://www.google.com/maps/search/?api=1&query=ul.+Świętego+Michała+Archanioła+10,+09-100+Siedlin"
+                      variant="footer"
+                      size="none"
+                      openInNewTab={true}
+                    >
+                      ul. Świętego Michała Archanioła 10, 09-100 Siedlin
+                    </ExternalLink>
+                  }
                   iconColor="primary"
                   textColor="default"
                   iconPosition="left"
@@ -160,7 +138,7 @@ export function Footer() {
           <p className="text-slate-600 text-sm mb-4 md:mb-0">
             © {currentYear} Herbalist. Wszelkie prawa zastrzeżone.
           </p>
-          <div className="flex space-x-6">
+          {/* <div className="flex space-x-6">
             <Link href="#" variant="footer" size="none" className="text-sm">
               Polityka Prywatności
             </Link>
@@ -170,7 +148,7 @@ export function Footer() {
             <Link href="#" variant="footer" size="none" className="text-sm">
               Informacje o Dostawie
             </Link>
-          </div>
+          </div> */}
         </div>
       </Section>
     </footer>
