@@ -93,7 +93,7 @@ const products = [
       "Liście, kwiaty i korzeń mniszka lekarskiego. Wspiera funkcjonowanie wątroby i procesy trawienia.",
     weight: "Hurtowo",
     tag: "Lecznicze",
-    iconName: "plantOutline",
+    imageSrc: "/dandelion.png",
   },
   {
     name: "Korzeń Lubczyku",
@@ -101,7 +101,7 @@ const products = [
       "Aromatyczny korzeń o intensywnym zapachu. Wspomaga trawienie i dodaje smaku potrawom.",
     weight: "Hurtowo",
     tag: "Kulinarne",
-    iconName: "seedling",
+    imageSrc: "/lovage-root.png",
   },
   {
     name: "Korzeń Prawoślazu",
@@ -109,7 +109,7 @@ const products = [
       "Łagodzi podrażnienia błon śluzowych. Idealny przy problemach z gardłem i układem oddechowym.",
     weight: "Hurtowo",
     tag: "Lecznicze",
-    iconName: "plant",
+    imageSrc: "/marshmallow-root.png",
   },
 ];
 
