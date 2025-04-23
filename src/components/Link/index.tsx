@@ -17,6 +17,7 @@ const linkStyles = tv({
       sm: "text-sm px-4 py-2",
       md: "text-lg px-8 py-4",
       lg: "text-xl px-10 py-5",
+      none: "",
     },
   },
   defaultVariants: {
