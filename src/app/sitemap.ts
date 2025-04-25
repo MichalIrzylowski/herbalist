@@ -6,10 +6,9 @@ import { MetadataRoute } from "next";
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://herbalist.com"; // Replace with your actual domain when deployed
+  const baseUrl = "https://herbalist-wt.pl";
   const lastModified = new Date();
 
-  // Define all routes in the site
   return [
     {
       url: `${baseUrl}`,
@@ -29,6 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    // Add more pages as they're created
   ];
 }
