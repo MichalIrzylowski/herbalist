@@ -110,7 +110,6 @@ export function Navigation({
     mobileMenuTrigger,
   } = navigation({ variant, sticky, spacing });
 
-  // Configure DesktopNavigation variant based on the main nav variant
   const desktopVariant = variant === "compact" ? "compact" : "default";
   const desktopSpacing =
     spacing === "tight" ? "tight" : spacing === "loose" ? "loose" : "default";
@@ -119,7 +118,6 @@ export function Navigation({
     <nav className={nav({ className })}>
       <div className={container()}>
         <div className={topBar()}>
-          {/* Logo and brand name */}
           <Link href="/" variant="nav" size="none" className={logoContainer()}>
             <Icon name="leaf" size="md" color="primary" className="mr-2" />
             <span className={brandText()}>Herbalist</span>

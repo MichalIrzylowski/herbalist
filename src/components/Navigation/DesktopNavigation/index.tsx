@@ -20,9 +20,6 @@ const desktopNavigation = tv({
   slots: {
     base: "hidden sm:flex items-center",
     linkContainer: "flex",
-    linkItem: "relative py-2",
-    activeLink:
-      "before:absolute before:h-0.5 before:w-full before:bg-emerald-700 before:bottom-0 before:left-0",
     ctaContainer: "flex items-center",
     cta: "",
   },
@@ -67,12 +64,11 @@ export function DesktopNavigation({
 }: DesktopNavigationProps) {
   const pathname = usePathname();
 
-  const { base, linkContainer, linkItem, activeLink, ctaContainer, cta } =
-    desktopNavigation({
-      variant,
-      spacing,
-      className,
-    });
+  const { base, linkContainer, ctaContainer, cta } = desktopNavigation({
+    variant,
+    spacing,
+    className,
+  });
 
   return (
     <div className={base()}>
@@ -80,14 +76,15 @@ export function DesktopNavigation({
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
-            <div
+            <Link
               key={link.name}
-              className={`${linkItem()} ${isActive ? activeLink() : ""}`}
+              href={link.href}
+              variant="nav"
+              size="none"
+              active={isActive}
             >
-              <Link href={link.href} variant="nav" size="none">
-                {link.name}
-              </Link>
-            </div>
+              {link.name}
+            </Link>
           );
         })}
       </div>
