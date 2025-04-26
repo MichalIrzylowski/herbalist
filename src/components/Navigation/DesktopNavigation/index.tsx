@@ -20,7 +20,6 @@ const desktopNavigation = tv({
   slots: {
     base: "hidden sm:flex items-center",
     linkContainer: "flex",
-    ctaContainer: "flex items-center",
     cta: "",
   },
   variants: {
@@ -64,7 +63,7 @@ export function DesktopNavigation({
 }: DesktopNavigationProps) {
   const pathname = usePathname();
 
-  const { base, linkContainer, ctaContainer, cta } = desktopNavigation({
+  const { base, linkContainer, cta } = desktopNavigation({
     variant,
     spacing,
     className,
@@ -89,11 +88,9 @@ export function DesktopNavigation({
         })}
       </div>
 
-      <div className={ctaContainer()}>
-        <Link href={ctaLink} variant="primary" size="sm" className={cta()}>
-          {ctaText}
-        </Link>
-      </div>
+      <Link href={ctaLink} variant="primary" size="sm" className={cta()}>
+        {ctaText}
+      </Link>
     </div>
   );
 }
