@@ -53,7 +53,7 @@ const products = [
       "Orzeźwiający aromat i właściwości wspierające trawienie. Idealna na napary i herbaty ziołowe.",
     weight: "Hurtowo",
     tag: "Kulinarne",
-    iconName: "seedling",
+    imageSrc: "/peppermint.png",
   },
   {
     name: "Rumianek Pospolity",
@@ -61,7 +61,7 @@ const products = [
       "Znany ze swoich właściwości uspokajających i przeciwzapalnych. Wspomaga sen i łagodzi podrażnienia.",
     weight: "Hurtowo",
     tag: "Lecznicze",
-    iconName: "leaf",
+    imageSrc: "/chamomile-flowers.png",
   },
   {
     name: "Melisa Lekarska",
