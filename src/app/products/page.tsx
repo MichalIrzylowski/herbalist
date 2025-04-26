@@ -137,23 +137,21 @@ export default async function ProductsPage({
   ));
 
   return (
-    <div>
-      <main>
-        <CompactHero
-          title="Nasza Kolekcja Ziół"
-          subtitle="Odkryj szeroki wybór najwyższej jakości ziół, starannie wyselekcjonowanych dla zdrowia i dobrego samopoczucia."
-          ctaText="Skontaktuj się z Nami"
-          ctaLink="/contact"
-        />
-        <Section background="white" spacing="large">
-          <Heading level={2} color="primary" marginBottom="medium">
-            Nasze Produkty
-          </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {productsComponents}
-          </div>
-        </Section>
-      </main>
-    </div>
+    <>
+      <CompactHero
+        title="Nasza Kolekcja Ziół"
+        subtitle="Odkryj szeroki wybór najwyższej jakości ziół, starannie wyselekcjonowanych dla zdrowia i dobrego samopoczucia."
+        ctaText="Skontaktuj się z Nami"
+        ctaLink="/contact"
+      />
+      <Section background="white" spacing="large">
+        <Heading level={2} color="primary" marginBottom="medium">
+          Nasze Produkty
+        </Heading>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          {productsComponents}
+        </div>
+      </Section>
+    </>
   );
 }

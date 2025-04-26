@@ -116,12 +116,12 @@ export function Footer() {
                   iconName="email"
                   text={
                     <ExternalLink
-                      href="mailto:kontakt@herbalist.pl"
+                      href="mailto:kontakt@herbalist-wt.pl"
                       variant="footer"
                       size="none"
                       openInNewTab={false}
                     >
-                      kontakt@herbalist.pl
+                      kontakt@herbalist-wt.pl
                     </ExternalLink>
                   }
                   iconColor="primary"

@@ -111,7 +111,7 @@ import Hero from "@/components/Hero";
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <Hero
         title="Custom Title Here"
         subtitle="Your custom subtitle text goes here"
@@ -119,7 +119,7 @@ export default function HomePage() {
         ctaLink="/shop"
       />
       {/* Other page content */}
-    </main>
+    </>
   );
 }
 ```
@@ -336,7 +336,7 @@ import CompactHero from "@/components/CompactHero";
 
 export default function ProductsPage() {
   return (
-    <main>
+    <>
       <CompactHero
         title="Our Products"
         subtitle="Browse our selection of premium herbs"
@@ -344,7 +344,7 @@ export default function ProductsPage() {
         ctaLink="#filters"
       />
       {/* Other page content */}
-    </main>
+    </>
   );
 }
 ```
@@ -541,7 +541,7 @@ import { Section } from "@/components/Section";
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <Section background="light" spacing="large" border="bottom">
         <h2 className="text-2xl font-bold">Welcome to Our Store</h2>
         <p>Discover our amazing collection of herbs.</p>
@@ -556,7 +556,7 @@ export default function HomePage() {
         <h3 className="text-xl font-bold">Featured Products</h3>
         {/* Product listings */}
       </Section>
-    </main>
+    </>
   );
 }
 ```
@@ -592,7 +592,7 @@ import MarketingSection from "@/components/MarketingSection";
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       <MarketingSection
         title="Why Choose Our Herbs"
         subtitle="We provide the highest quality herbs with sustainable sourcing"
@@ -620,7 +620,7 @@ export default function AboutPage() {
         ctaText="Shop Now"
         ctaLink="/products"
       />
-    </main>
+    </>
   );
 }
 ```

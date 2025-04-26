@@ -6,7 +6,6 @@ import { Link } from "@/components/Link";
 import { Icon } from "@/components/Icon";
 import { tv } from "tailwind-variants";
 
-// Define nav item styles using tailwind-variants
 const navItemStyles = tv({
   base: "relative py-2",
   variants: {
@@ -16,12 +15,10 @@ const navItemStyles = tv({
   },
 });
 
-// Define mobile menu button styles
 const mobileMenuButtonStyles = tv({
   base: "sm:hidden bg-transparent p-2 rounded-md text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2",
 });
 
-// Define mobile nav styles for the container
 const mobileNavStyles = tv({
   base: "sm:hidden fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out",
   variants: {
@@ -40,12 +37,10 @@ interface NavLink {
   href: string;
 }
 
-// Define main navigation links
 const navLinks: NavLink[] = [
   { name: "Strona Główna", href: "/" },
   { name: "Produkty", href: "/products" },
   { name: "O Nas", href: "/about-us" },
-  // Add more links as needed
 ];
 
 export interface NavigationProps {
@@ -72,19 +67,17 @@ export function Navigation({ className }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and brand name */}
-          <div className="flex items-center">
-            <Link
-              href="/"
-              variant="nav"
-              size="none"
-              className="flex items-center"
-            >
-              <Icon name="leaf" size="md" color="primary" className="mr-2" />
-              <span className="font-semibold text-xl text-emerald-900">
-                Herbalist
-              </span>
-            </Link>
-          </div>
+          <Link
+            href="/"
+            variant="nav"
+            size="none"
+            className="flex items-center"
+          >
+            <Icon name="leaf" size="md" color="primary" className="mr-2" />
+            <span className="font-semibold text-xl text-emerald-900">
+              Herbalist
+            </span>
+          </Link>
 
           {/* Desktop navigation */}
           <div className="hidden sm:flex sm:items-center">
@@ -166,17 +159,15 @@ export function Navigation({ className }: NavigationProps) {
                 </Link>
               );
             })}
-            <div className="border-t border-emerald-100 pt-4 mt-2">
-              <Link
-                href="/products"
-                variant="primary"
-                size="sm"
-                className="w-full"
-                onClick={handleLinkClick}
-              >
-                Kup Teraz
-              </Link>
-            </div>
+            <Link
+              href="/products"
+              variant="primary"
+              size="sm"
+              className="w-full"
+              onClick={handleLinkClick}
+            >
+              Kup Teraz
+            </Link>
           </div>
         </div>
       </div>
