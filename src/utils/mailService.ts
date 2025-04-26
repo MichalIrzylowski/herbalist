@@ -35,6 +35,7 @@ export interface EmailResult {
 
 export function createMailTransporter(config: EmailConfig) {
   try {
+    console.log(config);
     const validatedConfig = emailConfigSchema.parse(config);
     return nodemailer.createTransport(validatedConfig);
   } catch (error) {
