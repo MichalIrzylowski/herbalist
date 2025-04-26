@@ -22,9 +22,9 @@ const navLinks: NavLink[] = [
 const navigation = tv({
   slots: {
     nav: "bg-white border-b transition-all",
-    container: "mx-auto px-4 sm:px-6 lg:px-8",
+    container: "mx-auto container px-4",
     topBar: "flex justify-between items-center",
-    logoContainer: "flex items-center",
+    logoContainer: "flex items-center pl-0",
     brandText: "font-semibold text-emerald-900",
     mobileMenuTrigger: "sm:hidden flex items-center",
   },

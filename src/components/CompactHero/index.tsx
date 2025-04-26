@@ -1,49 +1,67 @@
 import { Link } from "../Link";
-import { Icon } from "../Icon";
 import { Heading } from "../Heading";
+import { tv } from "tailwind-variants";
 
 export interface CompactHeroProps {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
+  className?: string;
+  size?: "default" | "compact";
 }
 
+const compactHero = tv({
+  slots: {
+    base: "bg-emerald-50 border-b border-emerald-100",
+    container: "container mx-auto px-4 py-4 md:py-5",
+    wrapper: "flex flex-wrap items-center justify-between",
+    content: "w-full md:w-auto pr-0 md:pr-8 mb-2 md:mb-0",
+    subtitleText: "text-sm text-slate-600 mt-1",
+  },
+  variants: {
+    size: {
+      default: {
+        container: "py-4 md:py-5",
+      },
+      compact: {
+        container: "py-2 md:py-3",
+      },
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
 export default function CompactHero({
-  title = "Tytuł Strony",
-  subtitle = "Krótki opis tej sekcji",
+  title = "Page Title",
+  subtitle = "Short description of this section",
   ctaText,
   ctaLink,
+  className,
+  size,
 }: CompactHeroProps) {
-  return (
-    <section className="relative bg-emerald-50 border-b border-emerald-100">
-      {/* Simple decorative element */}
-      <div className="absolute right-0 top-0 bottom-0 overflow-hidden">
-        <div className="absolute -right-6 top-1/2 -translate-y-1/2">
-          <Icon
-            name="leafOutline"
-            color="primary"
-            size="md"
-            className="w-16 h-16 opacity-10"
-          />
-        </div>
-      </div>
+  const { base, container, wrapper, content, subtitleText } = compactHero({
+    size,
+    className,
+  });
 
-      <div className="container mx-auto px-4 py-4 md:py-5">
-        <div className="flex flex-wrap items-center justify-between">
-          <div className="w-full md:w-auto pr-0 md:pr-8 mb-2 md:mb-0">
+  return (
+    <section className={base()}>
+      <div className={container()}>
+        <div className={wrapper()}>
+          <div className={content()}>
             <Heading level={1} size="h3" color="primary" marginBottom="none">
               {title}
             </Heading>
-            <p className="text-sm text-slate-600 mt-1">{subtitle}</p>
+            <p className={subtitleText()}>{subtitle}</p>
           </div>
 
           {ctaText && ctaLink && (
-            <div className="mt-2 md:mt-0">
-              <Link href={ctaLink} variant="primary" size="sm">
-                {ctaText}
-              </Link>
-            </div>
+            <Link href={ctaLink} variant="primary" size="sm">
+              {ctaText}
+            </Link>
           )}
         </div>
       </div>

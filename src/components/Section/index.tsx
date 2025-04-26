@@ -20,7 +20,7 @@ const sectionStyles = tv({
     },
     width: {
       full: "w-full",
-      container: "container mx-auto px-4",
+      container: "container mx-auto",
     },
     border: {
       none: "",
