@@ -8,6 +8,9 @@ const contactFormSchema = z.object({
   email: z.string().email("Proszę podać prawidłowy adres email"),
   subject: z.string().min(5, "Temat musi zawierać co najmniej 5 znaków"),
   message: z.string().min(10, "Wiadomość musi zawierać co najmniej 10 znaków"),
+  privacyPolicy: z.literal("on", {
+    errorMap: () => ({ message: "Musisz zaakceptować Politykę Prywatności" }),
+  }),
 });
 
 type State = {
@@ -26,6 +29,7 @@ export async function submitContactForm(
       email: formData.get("email"),
       subject: formData.get("subject"),
       message: formData.get("message"),
+      privacyPolicy: formData.get("privacyPolicy"),
     });
 
     console.log("Server received form data:", validatedFields);

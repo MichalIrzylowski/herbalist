@@ -12,6 +12,7 @@ import { TextWithIcon } from "@/components/TextWithIcon";
 import { ExternalLink } from "@/components/ExternalLink";
 import { StatusMessage } from "@/components/StatusMessage";
 import { Link } from "@/components/Link";
+import { FormCheckbox } from "@/components/Checkbox";
 import { submitContactForm } from "./actions";
 
 const initialState = {
@@ -23,12 +24,15 @@ const initialState = {
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction, pending] = useFormState(
+    submitContactForm,
+    initialState
+  );
 
   const [showSuccess, setShowSuccess] = useState(false);
 
   if (state.success && !showSuccess) {
-    // formRef.current?.reset();
+    formRef.current?.reset();
     setShowSuccess(true);
 
     setTimeout(() => {
@@ -97,18 +101,23 @@ export default function ContactPage() {
                 placeholder="Wpisz swoją wiadomość tutaj..."
               />
 
-              <div className="mt-2 text-sm text-slate-600">
-                Wysyłając ten formularz, zgadzasz się z naszą{" "}
-                <Link
-                  href="/privacy-policy"
-                  variant="footer"
-                  size="none"
-                  className="underline"
-                >
-                  Polityką Prywatności
-                </Link>
-                .
-              </div>
+              <FormCheckbox
+                name="privacyPolicy"
+                error={state.errors?.privacyPolicy}
+                label={
+                  <>
+                    Zgadzam się z{" "}
+                    <Link
+                      href="/privacy-policy"
+                      variant="footer"
+                      size="none"
+                      className="underline"
+                    >
+                      Polityką Prywatności
+                    </Link>
+                  </>
+                }
+              />
 
               <div className="flex justify-end mt-8">
                 <Button
@@ -116,6 +125,7 @@ export default function ContactPage() {
                   variant="primary"
                   size="md"
                   iconRight="arrowRight"
+                  disabled={pending}
                 >
                   Wyślij Wiadomość
                 </Button>
