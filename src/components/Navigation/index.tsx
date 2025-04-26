@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Link } from "@/components/Link";
 import { Icon } from "@/components/Icon";
 import { tv } from "tailwind-variants";
+import { MobileMenuButton } from "./MobileMenuButton";
 
 const navItemStyles = tv({
   base: "relative py-2",
@@ -13,10 +14,6 @@ const navItemStyles = tv({
       true: "before:absolute before:h-0.5 before:w-full before:bg-emerald-700 before:bottom-0 before:left-0",
     },
   },
-});
-
-const mobileMenuButtonStyles = tv({
-  base: "sm:hidden bg-transparent p-2 rounded-md text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2",
 });
 
 const mobileNavStyles = tv({
@@ -107,18 +104,10 @@ export function Navigation({ className }: NavigationProps) {
 
           {/* Mobile menu button */}
           <div className="sm:hidden flex items-center">
-            <button
-              type="button"
-              className={mobileMenuButtonStyles()}
+            <MobileMenuButton
+              isOpen={mobileMenuOpen}
               onClick={toggleMobileMenu}
-              aria-label="Przełącz menu mobilne"
-            >
-              {mobileMenuOpen ? (
-                <Icon name="close" size="md" aria-hidden={true} />
-              ) : (
-                <Icon name="menu" size="md" aria-hidden={true} />
-              )}
-            </button>
+            />
           </div>
         </div>
       </div>
