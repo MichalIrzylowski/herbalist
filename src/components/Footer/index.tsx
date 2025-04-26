@@ -143,17 +143,22 @@ export function Footer() {
           <p className="text-slate-600 text-sm mb-4 md:mb-0">
             © {currentYear} Herbalist. Wszelkie prawa zastrzeżone.
           </p>
-          {/* <div className="flex space-x-6">
-            <Link href="#" variant="footer" size="none" className="text-sm">
+          <div className="flex space-x-6">
+            <Link
+              href="/privacy-policy"
+              variant="footer"
+              size="none"
+              className="text-sm"
+            >
               Polityka Prywatności
             </Link>
-            <Link href="#" variant="footer" size="none" className="text-sm">
+            {/* <Link href="#" variant="footer" size="none" className="text-sm">
               Warunki Korzystania
             </Link>
             <Link href="#" variant="footer" size="none" className="text-sm">
               Informacje o Dostawie
-            </Link>
-          </div> */}
+            </Link> */}
+          </div>
         </div>
       </Section>
     </footer>

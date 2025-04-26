@@ -11,6 +11,7 @@ import { Heading } from "@/components/Heading";
 import { TextWithIcon } from "@/components/TextWithIcon";
 import { ExternalLink } from "@/components/ExternalLink";
 import { StatusMessage } from "@/components/StatusMessage";
+import { Link } from "@/components/Link";
 import { submitContactForm } from "./actions";
 
 const initialState = {
@@ -95,6 +96,19 @@ export default function ContactPage() {
                 rows="large"
                 placeholder="Wpisz swoją wiadomość tutaj..."
               />
+
+              <div className="mt-2 text-sm text-slate-600">
+                Wysyłając ten formularz, zgadzasz się z naszą{" "}
+                <Link
+                  href="/privacy-policy"
+                  variant="footer"
+                  size="none"
+                  className="underline"
+                >
+                  Polityką Prywatności
+                </Link>
+                .
+              </div>
 
               <div className="flex justify-end mt-8">
                 <Button
