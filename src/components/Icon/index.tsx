@@ -12,12 +12,19 @@ import {
   FaPinterestP,
   FaLinkedinIn,
   FaBars,
+  FaSpinner,
+  FaUser,
 } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline, IoMdClose } from "react-icons/io";
 import { RiPlantFill, RiPlantLine, RiLeafLine } from "react-icons/ri";
-import { BiSearchAlt } from "react-icons/bi";
-import { MdOutlineLocalShipping, MdEmail } from "react-icons/md";
-import { BsArrowRight, BsTelephone, BsMoonStars } from "react-icons/bs";
+import { BiSearchAlt, BiError } from "react-icons/bi";
+import { MdOutlineLocalShipping, MdEmail, MdSubject } from "react-icons/md";
+import {
+  BsArrowRight,
+  BsTelephone,
+  BsMoonStars,
+  BsClock,
+} from "react-icons/bs";
 import {
   GiPlantRoots,
   GiMedicines,
@@ -59,11 +66,16 @@ export const icons = {
   close: IoMdClose,
   arrowRight: BsArrowRight,
   menu: FaBars,
+  spinner: FaSpinner,
+  error: BiError,
+  messageSubject: MdSubject,
 
   // Contact & Location
   location: FaMapMarkerAlt,
   phone: BsTelephone,
   email: MdEmail,
+  person: FaUser,
+  clock: BsClock,
 
   // Social Media
   facebook: FaFacebookF,
@@ -115,10 +127,18 @@ export function Icon({
   ...props
 }: IconProps) {
   const IconComponent = icons[name];
+  const combinedClassName =
+    name === "spinner"
+      ? iconStyles({
+          size,
+          color,
+          className: `animate-spin ${className || ""}`,
+        })
+      : iconStyles({ size, color, className });
 
   return (
     <IconComponent
-      className={iconStyles({ size, color, className })}
+      className={combinedClassName}
       aria-hidden={ariaHidden}
       {...props}
     />

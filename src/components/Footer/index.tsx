@@ -42,6 +42,11 @@ export function Footer() {
                   O Nas
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" variant="footer" size="none">
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
 
