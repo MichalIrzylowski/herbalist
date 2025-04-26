@@ -6,6 +6,7 @@ import { Link } from "@/components/Link";
 import { Icon } from "@/components/Icon";
 import { tv } from "tailwind-variants";
 import { MobileMenuButton } from "./MobileMenuButton";
+import { MobileMenu } from "./MobileMenu";
 
 const navItemStyles = tv({
   base: "relative py-2",
@@ -13,19 +14,6 @@ const navItemStyles = tv({
     active: {
       true: "before:absolute before:h-0.5 before:w-full before:bg-emerald-700 before:bottom-0 before:left-0",
     },
-  },
-});
-
-const mobileNavStyles = tv({
-  base: "sm:hidden fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out",
-  variants: {
-    open: {
-      true: "translate-x-0",
-      false: "translate-x-full",
-    },
-  },
-  defaultVariants: {
-    open: false,
   },
 });
 
@@ -52,11 +40,8 @@ export function Navigation({ className }: NavigationProps) {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Handle link click for mobile menu
-  const handleLinkClick = () => {
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -112,54 +97,12 @@ export function Navigation({ className }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div className={mobileNavStyles({ open: mobileMenuOpen })}>
-        <div
-          className="fixed inset-0 bg-slate-800 bg-opacity-50"
-          onClick={toggleMobileMenu}
-        />
-        <div className="fixed top-0 right-0 bottom-0 w-64 bg-white p-5 shadow-lg">
-          <div className="flex justify-between items-center mb-6">
-            <span className="font-semibold text-xl text-emerald-900">
-              Herbalist
-            </span>
-            <button
-              type="button"
-              className="text-slate-700 hover:text-emerald-700"
-              onClick={toggleMobileMenu}
-              aria-label="Zamknij menu mobilne"
-            >
-              <Icon name="close" size="md" aria-hidden={true} />
-            </button>
-          </div>
-          <div className="flex flex-col space-y-4">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  variant="nav"
-                  size="none"
-                  className={isActive ? "text-emerald-700" : ""}
-                  onClick={handleLinkClick}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-            <Link
-              href="/products"
-              variant="primary"
-              size="sm"
-              className="w-full"
-              onClick={handleLinkClick}
-            >
-              Kup Teraz
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Mobile menu component */}
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onClose={closeMobileMenu}
+        navLinks={navLinks}
+      />
     </nav>
   );
 }
